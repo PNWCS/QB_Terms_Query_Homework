@@ -10,12 +10,36 @@ except ImportError:
 
 def build_terms_query() -> str:
     """Return a minimal TermsQueryRq XML."""
-    raise NotImplementedError()
+    # Minimal QBXML TermsQueryRq
+    return (
+        '<?xml version="1.0" encoding="utf-8"?>\n'
+        '<?qbxml version="13.0"?>\n'
+        "<QBXML>\n"
+        '  <QBXMLMsgsRq onError="stopOnError">\n'
+        "    <TermsQueryRq />\n"
+        "  </QBXMLMsgsRq>\n"
+        "</QBXML>"
+    )
 
 
 def parse_and_print(response_xml: str) -> None:
+    # Parse the XML and print Term Name and Discount Days
     """Parse response and print term name + discount days."""
-    raise NotImplementedError()
+    root = ET.fromstring(response_xml)
+
+    # Find and print StandardTermsRet
+    standard_terms = root.findall(".//StandardTermsRet")
+    for term in standard_terms:
+        name = term.findtext("Name", default="N/A")
+        discount_days = term.findtext("StdDiscountDays", default="N/A")
+        print(f"Term Name: {name}, Discount Days: {discount_days}")
+
+    # Find and print DateDrivenTermsRet
+    date_driven_terms = root.findall(".//DateDrivenTermsRet")
+    for term in date_driven_terms:
+        name = term.findtext("Name", default="N/A")
+        discount_days = term.findtext("DiscountDayOfMonth", default="N/A")
+        print(f"Term Name: {name}, Discount Days: {discount_days}")
 
 
 def main():
