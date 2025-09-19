@@ -9,13 +9,36 @@ except ImportError:
 
 
 def build_terms_query() -> str:
-    """Return a minimal TermsQueryRq XML."""
-    raise NotImplementedError()
+    """Return a minimal TermsQueryRq XML (only required fields)."""
+    request_body = """<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="16.0"?>
+<QBXML>
+    <QBXMLMsgsRq onError="stopOnError">
+        <TermsQueryRq />
+    </QBXMLMsgsRq>
+</QBXML>"""
+    return request_body
 
 
 def parse_and_print(response_xml: str) -> None:
     """Parse response and print term name + discount days."""
-    raise NotImplementedError()
+    root = ET.fromstring(response_xml)
+
+    # Get the statusCode and statusMessage from the response.
+    msgs_response = root.find(".//QBXMLMsgsRs/TermsQueryRs")
+    if msgs_response is not None:
+        status_code = msgs_response.get("statusCode")
+        status_message = msgs_response.get("statusMessage")
+
+        if status_code != "0":  # Not successful
+            print(f"Error {status_code}: {status_message}")
+            return
+
+    # Loop through all StandardTermsRet tags.
+    for terms in root.findall(".//StandardTermsRet"):
+        name = terms.find("Name")
+        discount_days = terms.find("DiscountDays")
+        print(f"{name.text if name is not None else 'N/A'}")
 
 
 def main():
