@@ -24,7 +24,7 @@ def parse_and_print(response_xml: str) -> None:
     """Parse response and print term name + discount days."""
     root = ET.fromstring(response_xml)
 
-    # Get the statusCode and statusMessage from the response
+    # Get the statusCode and statusMessage from the response.
     msgs_response = root.find(".//QBXMLMsgsRs/TermsQueryRs")
     if msgs_response is not None:
         status_code = msgs_response.get("statusCode")
@@ -34,7 +34,7 @@ def parse_and_print(response_xml: str) -> None:
             print(f"Error {status_code}: {status_message}")
             return
 
-    # Loop through all StandardTermsRet tags
+    # Loop through all StandardTermsRet tags.
     for terms in root.findall(".//StandardTermsRet"):
         name = terms.find("Name")
         discount_days = terms.find("DiscountDays")
