@@ -10,12 +10,14 @@ except ImportError:
 
 def build_terms_query() -> str:
     """Return a minimal TermsQueryRq XML (only required fields)."""
-    return """<?xml version="1.0"?>
+    request_body = """<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="16.0"?>
 <QBXML>
-  <QBXMLMsgsRq onError="stopOnError">
-    <TermsQueryRq requestID="1" />
-  </QBXMLMsgsRq>
+    <QBXMLMsgsRq onError="stopOnError">
+        <TermsQueryRq />
+    </QBXMLMsgsRq>
 </QBXML>"""
+    return request_body
 
 
 def parse_and_print(response_xml: str) -> None:
@@ -36,7 +38,7 @@ def parse_and_print(response_xml: str) -> None:
     for terms in root.findall(".//StandardTermsRet"):
         name = terms.find("Name")
         discount_days = terms.find("DiscountDays")
-        print(f"{name.text if name is not None else 'N/A'} - {discount_days.text if discount_days is not None else 'N/A'}")
+        print(f"{name.text if name is not None else 'N/A'}")
 
 
 def main():
