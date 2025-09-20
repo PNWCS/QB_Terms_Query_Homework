@@ -3,10 +3,10 @@
 <QBXMLMsgsRs>
 <TermsQueryRs statusCode="0" statusSeverity="Info" statusMessage="Status OK">
 <StandardTermsRet>
-<ListID>80000001-1758063532</ListID>
-<TimeCreated>2025-09-16T22:58:52+00:00</TimeCreated>
-<TimeModified>2025-09-16T22:58:52+00:00</TimeModified>
-<EditSequence>1758063532</EditSequence>
+<ListID>80000001-1758131720</ListID>
+<TimeCreated>2025-09-17T17:55:20+00:00</TimeCreated>
+<TimeModified>2025-09-17T17:55:20+00:00</TimeModified>
+<EditSequence>1758131720</EditSequence>
 <Name>1% 10 Net 30</Name>
 <IsActive>true</IsActive>
 <StdDueDays>30</StdDueDays>
@@ -14,10 +14,10 @@
 <DiscountPct>1.00</DiscountPct>
 </StandardTermsRet>
 <StandardTermsRet>
-<ListID>80000002-1758063532</ListID>
-<TimeCreated>2025-09-16T22:58:52+00:00</TimeCreated>
-<TimeModified>2025-09-16T22:58:52+00:00</TimeModified>
-<EditSequence>1758063532</EditSequence>
+<ListID>80000002-1758131720</ListID>
+<TimeCreated>2025-09-17T17:55:20+00:00</TimeCreated>
+<TimeModified>2025-09-17T17:55:20+00:00</TimeModified>
+<EditSequence>1758131720</EditSequence>
 <Name>2% 10 Net 30</Name>
 <IsActive>true</IsActive>
 <StdDueDays>30</StdDueDays>
@@ -25,10 +25,10 @@
 <DiscountPct>2.00</DiscountPct>
 </StandardTermsRet>
 <StandardTermsRet>
-<ListID>80000003-1758063532</ListID>
-<TimeCreated>2025-09-16T22:58:52+00:00</TimeCreated>
-<TimeModified>2025-09-16T22:58:52+00:00</TimeModified>
-<EditSequence>1758063532</EditSequence>
+<ListID>80000003-1758131720</ListID>
+<TimeCreated>2025-09-17T17:55:20+00:00</TimeCreated>
+<TimeModified>2025-09-17T17:55:20+00:00</TimeModified>
+<EditSequence>1758131720</EditSequence>
 <Name>Consignment</Name>
 <IsActive>true</IsActive>
 <StdDueDays>90</StdDueDays>
@@ -36,10 +36,10 @@
 <DiscountPct>0.00</DiscountPct>
 </StandardTermsRet>
 <StandardTermsRet>
-<ListID>80000004-1758063532</ListID>
-<TimeCreated>2025-09-16T22:58:52+00:00</TimeCreated>
-<TimeModified>2025-09-16T22:58:52+00:00</TimeModified>
-<EditSequence>1758063532</EditSequence>
+<ListID>80000004-1758131720</ListID>
+<TimeCreated>2025-09-17T17:55:20+00:00</TimeCreated>
+<TimeModified>2025-09-17T17:55:20+00:00</TimeModified>
+<EditSequence>1758131720</EditSequence>
 <Name>Due on receipt</Name>
 <IsActive>true</IsActive>
 <StdDueDays>0</StdDueDays>
@@ -47,10 +47,10 @@
 <DiscountPct>0.00</DiscountPct>
 </StandardTermsRet>
 <StandardTermsRet>
-<ListID>80000005-1758063532</ListID>
-<TimeCreated>2025-09-16T22:58:52+00:00</TimeCreated>
-<TimeModified>2025-09-16T22:58:52+00:00</TimeModified>
-<EditSequence>1758063532</EditSequence>
+<ListID>80000005-1758131720</ListID>
+<TimeCreated>2025-09-17T17:55:20+00:00</TimeCreated>
+<TimeModified>2025-09-17T17:55:20+00:00</TimeModified>
+<EditSequence>1758131720</EditSequence>
 <Name>Net 15</Name>
 <IsActive>true</IsActive>
 <StdDueDays>15</StdDueDays>
@@ -58,10 +58,10 @@
 <DiscountPct>0.00</DiscountPct>
 </StandardTermsRet>
 <StandardTermsRet>
-<ListID>80000006-1758063532</ListID>
-<TimeCreated>2025-09-16T22:58:52+00:00</TimeCreated>
-<TimeModified>2025-09-16T22:58:52+00:00</TimeModified>
-<EditSequence>1758063532</EditSequence>
+<ListID>80000006-1758131720</ListID>
+<TimeCreated>2025-09-17T17:55:20+00:00</TimeCreated>
+<TimeModified>2025-09-17T17:55:20+00:00</TimeModified>
+<EditSequence>1758131720</EditSequence>
 <Name>Net 30</Name>
 <IsActive>true</IsActive>
 <StdDueDays>30</StdDueDays>
@@ -69,10 +69,10 @@
 <DiscountPct>0.00</DiscountPct>
 </StandardTermsRet>
 <StandardTermsRet>
-<ListID>80000007-1758063532</ListID>
-<TimeCreated>2025-09-16T22:58:52+00:00</TimeCreated>
-<TimeModified>2025-09-16T22:58:52+00:00</TimeModified>
-<EditSequence>1758063532</EditSequence>
+<ListID>80000007-1758131720</ListID>
+<TimeCreated>2025-09-17T17:55:20+00:00</TimeCreated>
+<TimeModified>2025-09-17T17:55:20+00:00</TimeModified>
+<EditSequence>1758131720</EditSequence>
 <Name>Net 60</Name>
 <IsActive>true</IsActive>
 <StdDueDays>60</StdDueDays>
