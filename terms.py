@@ -10,12 +10,27 @@ except ImportError:
 
 def build_terms_query() -> str:
     """Return a minimal TermsQueryRq XML."""
+
     raise NotImplementedError()
 
 
 def parse_and_print(response_xml: str) -> None:
     """Parse response and print term name + discount days."""
-    raise NotImplementedError()
+    root = ET.fromstring(response_xml)
+    rs = root.find(".//TermsQueryRs")
+
+    if rs is None:
+        print("No TermsQueryRs found in response")
+        return
+    status_code = int(rs.attrib.get("statuscode", "0"))
+    status_msg = rs.attrib.get("statusMessage", "")
+    if status_code != 0:
+        print(f"QuickBook returned error {status_code}:{status_msg}")
+        return
+    for std in rs.findall(".//StandardTermsRet"):
+        name = (std.findtext("Name") or "").strip()
+        discount_days = (std.findtext("StdDiscountDays") or "").strip()
+        print(f"Term: {name}, Discount Days: {discount_days}")
 
 
 def main():
