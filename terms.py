@@ -9,9 +9,17 @@ except ImportError:
 
 
 def build_terms_query() -> str:
-    """Return a minimal TermsQueryRq XML."""
-
-    raise NotImplementedError()
+    """Return a minimal TermsQueryRq QBXML request as a string."""
+    return """<?xml version="1.0"?>
+<?qbxml version="13.0"?>
+<QBXML>
+  <QBXMLMsgsRq onError="stopOnError">
+    <TermsQueryRq requestID="1">
+      <!-- Optional filters could go here, e.g., ListID, FullName, ActiveStatus -->
+    </TermsQueryRq>
+  </QBXMLMsgsRq>
+</QBXML>
+"""
 
 
 def parse_and_print(response_xml: str) -> None:
