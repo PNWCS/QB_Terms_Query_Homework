@@ -10,12 +10,41 @@ except ImportError:
 
 def build_terms_query() -> str:
     """Return a minimal TermsQueryRq XML."""
-    raise NotImplementedError()
+
+    xml_string = """<?xml version="1.0" encoding="utf-8"?>
+<?qbxml version="13.0"?>
+<QBXML>
+  <QBXMLMsgsRq onError="stopOnError">
+    <TermsQueryRq/>
+  </QBXMLMsgsRq>
+</QBXML>
+
+     """
+
+    return xml_string
 
 
 def parse_and_print(response_xml: str) -> None:
     """Parse response and print term name + discount days."""
-    raise NotImplementedError()
+    with open("response.xml", "w") as file:
+        file.write(response_xml)
+
+    tree = ET.parse("response.xml")
+    root = tree.getroot()
+
+    terms_query_rs = root.find(".//TermsQueryRs")
+
+    status_code = terms_query_rs.get("statusCode")
+    status_message = terms_query_rs.get("statusMessage")
+
+    if status_code != "0":
+        print(f"Error: {status_message}")
+        exit()
+
+    for term in terms_query_rs.findall("StandardTermsRet"):
+        name = term.findtext("Name")
+        discount_days = term.findtext("StdDiscountDays")
+        print(f"Name: {name}, Discount Days: {discount_days}")
 
 
 def main():
